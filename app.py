@@ -29,16 +29,16 @@ DATA_FILE = "data/top5_crypto_data.csv"  # default dataset
 # --------------------------
 st.sidebar.header("Settings")
 
-# # Upload new CSV
-# uploaded_file = st.sidebar.file_uploader("Upload your dataset CSV (optional)", type=["csv"])
+# Upload new CSV
+uploaded_file = st.sidebar.file_uploader("Upload your dataset CSV (optional)", type=["csv"])
 # if uploaded_file:
 #     df_all = pd.read_csv(uploaded_file)
 # else:
-#     if os.path.exists(DATA_FILE):
-#         df_all = pd.read_csv(DATA_FILE)
-#     else:
-#         st.error("No dataset found. Please upload a CSV file!")
-#         st.stop()
+if os.path.exists(DATA_FILE):
+    df_all = pd.read_csv(DATA_FILE)
+else:
+    st.error("No dataset found. Please upload a CSV file!")
+    st.stop()
 
 # Available models (remove duplicates)
 available_models = list({
