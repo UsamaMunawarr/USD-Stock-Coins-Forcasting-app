@@ -149,28 +149,8 @@ df_display["MA30"] = df_display["adjclose"].rolling(30).mean()
 # --------------------------
 # Plotly Chart with Multi-Day Forecast
 # --------------------------
-# if chart_type == "Line Chart":
-#     fig = go.Figure()
-#     fig.add_trace(go.Scatter(x=df_display["timestamp"], y=df_display["adjclose"],
-#                              mode="lines+markers", name="Actual Adj Close"))
-#     fig.add_trace(go.Scatter(x=df_display["timestamp"], y=df_display["MA7"], mode="lines", name="MA7"))
-#     fig.add_trace(go.Scatter(x=df_display["timestamp"], y=df_display["MA30"], mode="lines", name="MA30"))
-#     fig.add_trace(go.Scatter(
-#         x=pred_dates,
-#         y=pred_prices,
-#         mode="lines+markers+text",
-#         name="Forecast",
-#         marker=dict(color="red", size=10),
-#         line=dict(dash="dash"),
-#         text=[f"${p:.4f}" for p in pred_prices],
-#         textposition="top center"
-#     ))
-#     fig.update_layout(title=f"{coin_symbol} Price Trend (Last {last_n_days} Days + Next {next_n_days} Days)",
-#                       xaxis_title="Date",
-#                       yaxis_title="Price (USD)",
-#                       template="plotly_dark")
-# else:
-if fig == go.Figure(data=[go.Candlestick(
+if chart_type == "Candlestick Chart":
+    fig = go.Figure(data=[go.Candlestick(
         x=df_display["timestamp"],
         open=df_display["open"],
         high=df_display["high"],
@@ -190,16 +170,14 @@ if fig == go.Figure(data=[go.Candlestick(
         text=[f"${p:.4f}" for p in pred_prices],
         textposition="top center"
     ))
-    fig.update_layout(title=f"{coin_symbol} Candlestick Trend (Last {last_n_days} Days + Next {next_n_days} Days)",
-                      xaxis_title="Date",
-                      yaxis_title="Price (USD)",
-                      template="plotly_dark")
+    fig.update_layout(
+        title=f"{coin_symbol} Candlestick Trend (Last {last_n_days} Days + Next {next_n_days} Days)",
+        xaxis_title="Date",
+        yaxis_title="Price (USD)",
+        template="plotly_dark"
+    )
 
-st.plotly_chart(fig, use_container_width=True)
-
-
-else:
-    chart_type == "Line Chart":
+else:  # Line Chart
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=df_display["timestamp"], y=df_display["adjclose"],
                              mode="lines+markers", name="Actual Adj Close"))
@@ -215,10 +193,15 @@ else:
         text=[f"${p:.4f}" for p in pred_prices],
         textposition="top center"
     ))
-    fig.update_layout(title=f"{coin_symbol} Price Trend (Last {last_n_days} Days + Next {next_n_days} Days)",
-                      xaxis_title="Date",
-                      yaxis_title="Price (USD)",
-                      template="plotly_dark")
+    fig.update_layout(
+        title=f"{coin_symbol} Price Trend (Last {last_n_days} Days + Next {next_n_days} Days)",
+        xaxis_title="Date",
+        yaxis_title="Price (USD)",
+        template="plotly_dark"
+    )
+
+st.plotly_chart(fig, use_container_width=True)
+
 
 # --------------------------
 # Download Multi-Day Prediction CSV
