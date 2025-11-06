@@ -170,7 +170,7 @@ df_display["MA30"] = df_display["adjclose"].rolling(30).mean()
 #                       yaxis_title="Price (USD)",
 #                       template="plotly_dark")
 # else:
-if fig = go.Figure(data=[go.Candlestick(
+if fig == go.Figure(data=[go.Candlestick(
         x=df_display["timestamp"],
         open=df_display["open"],
         high=df_display["high"],
