@@ -2,7 +2,7 @@
 
 # 💰 Interactive LSTM Crypto Price Prediction Dashboard
 
-![App Screenshot](screenshot/app.PNG)
+![App Screenshot](app.PNG)  
 [![Python](https://img.shields.io/badge/python-3.12-blue?logo=python\&logoColor=white)](https://www.python.org/)[![Streamlit](https://img.shields.io/badge/streamlit-1.39-orange?logo=streamlit\&logoColor=white)](https://streamlit.io/)[![TensorFlow](https://img.shields.io/badge/tensorflow-2.19-red?logo=tensorflow\&logoColor=white)](https://www.tensorflow.org/)[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ---
@@ -104,3 +104,4 @@ streamlit run app.py
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
 ---
+
