@@ -53,7 +53,6 @@ Designed for **crypto enthusiasts, traders, and data science learners**, this ap
 ## 👨‍💻 About the Developer
 
 **Usama Munawar** – Data Scientist | MPhil Scholar | Machine Learning Enthusiast
-  
 Passionate about transforming raw data into meaningful insights and intelligent systems.  
   
 🌍 Connect with me:      
@@ -104,6 +103,7 @@ streamlit run app.py
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
 ---
+
 
 
 
