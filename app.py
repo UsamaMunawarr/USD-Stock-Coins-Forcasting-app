@@ -30,7 +30,7 @@ DATA_FILE = "data/top5_crypto_data.csv"  # default dataset
 st.sidebar.header("Settings")
 
 # Upload new CSV
-uploaded_file = st.sidebar.file_uploader("Upload your dataset CSV (optional)", type=["csv"])
+#uploaded_file = st.sidebar.file_uploader("Upload your dataset CSV (optional)", type=["csv"])
 # if uploaded_file:
 #     df_all = pd.read_csv(uploaded_file)
 # else:
